@@ -1,0 +1,16 @@
+{
+    "name": "nickdekruijk/ministrap.css",
+    "description": "Very small css file I use as base for most projects",
+    "license": "MIT",
+	  "keywords": [
+		    "css",
+		    "frontend"
+	  ],
+    "authors": [
+        {
+            "name": "Nick de Kruijk",
+            "email": "git@nickdekruijk.nl"
+        }
+    ],
+    "minimum-stability": "dev"
+}
