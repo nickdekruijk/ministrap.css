@@ -20,6 +20,9 @@ html {
 	-ms-user-select: none;
 	user-select: none;
 }
+.no-scrolling {
+    overflow: hidden;
+}
 
 /* Fix floating elements */
 .nav:after,
