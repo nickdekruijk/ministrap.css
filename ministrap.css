@@ -267,6 +267,7 @@ input[type="radio"] {
 	overflow: hidden;
 	max-width: 100%;
 	transition: border .25s, box-shadow .25s;
+	position: relative;
 }
 .button:focus {
 	outline: none;
@@ -276,8 +277,50 @@ input[type="radio"] {
 	background-color: rgba(0,0,0,0.2);
 }
 .button.is-loading {
-	opacity: 0.7;
+	opacity: 0.8;
+	color: transparent;
 	cursor: not-allowed;
+	pointer-events: none;
+}
+/* is-loading animation from bulma.css Copyright (c) 2017 Jeremy Thomas */
+.button.is-loading:after {
+  -webkit-animation: spinAround 500ms infinite linear;
+          animation: spinAround 500ms infinite linear;
+  border: 2px solid #fff;
+  border-radius: 290486px;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  content: "";
+  display: block;
+  height: 1em;
+  position: relative;
+  width: 1em;
+  left: 50%;
+  margin-left: -0.5em;
+  margin-top: -0.5em;
+  position: absolute;
+  top: 50%;
+  position: absolute !important;
+}
+@-webkit-keyframes spinAround {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+@keyframes spinAround {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
 }
 .button:hover {
 	background-color: rgba(0,0,0,0.3);
