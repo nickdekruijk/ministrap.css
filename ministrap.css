@@ -1,6 +1,14 @@
 /*! ministrap.css | MIT License | github.com/nickdekruijk/ministrap.css */
 
-/*! minireset.css v0.0.3 | MIT License | github.com/jgthms/minireset.css */html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select,textarea{margin:0}html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}img,embed,iframe,object,audio,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0;text-align:left}
+/* minireset.css v0.0.3 | MIT License | github.com/jgthms/minireset.css */html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select,textarea{margin:0}html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}img,embed,iframe,object,audio,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0;text-align:left}
+
+/* Default font */
+body {
+    font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color:#4a4a4a;
+    font-size:1rem;
+    line-height:1.5;
+}
 
 /* Better antialiasing for fonts */
 html {
@@ -35,7 +43,10 @@ html {
 
 A {
 	text-decoration: none;
-	color: inherit;
+	color: red;
+}
+A:hover {
+    color: #000;
 }
 
 .container {
@@ -72,21 +83,27 @@ A {
 	position: absolute;
 	right: 0;
 	cursor: pointer;
-	padding: 11px 10px;
+	padding: 11px 15px;
 }
 .nav-hamburger > SPAN {
-	height: 4px;
+	height: 3px;
 	display: block;
 	width: 24px;
-	margin: 4px 0;
-	background-color: #000;
+	margin: 5px 0;
+	background-color: #4a4a4a;
 	border-radius: 2px;
-	transition: transform .4s, opacity .4s, background-color .4s;
+	transition: transform .25s ease-out, opacity .25s ease-out, background-color .25s ease-out;
+}
+.nav-hamburger > SPAN:nth-child(1) {
+	transform-origin: right top;
+}
+.nav-hamburger > SPAN:nth-child(3) {
+	transform-origin: right bottom;
 }
 
 .nav-logo {
 	float: left;
-	padding: 10px;
+	padding: 20px 20px;
 }
 
 .nav {
@@ -96,7 +113,8 @@ A {
 
 .nav LI A {
 	display: block;
-	padding: 10px;
+	color: inherit;
+	padding: 20px 20px;
 }
 .nav-container > UL.right {
     float:right;
@@ -113,17 +131,23 @@ A {
 	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
 }
 
+.article P {margin-top:0.5rem}
+.subtitle,
+.title {margin-bottom:1rem;line-height:1.2}
+.subtitle {margin-top:-1rem}
+.title,
 .h1 {
+	font-size:1.8em;
+}
+.subtitle,
+.h2 {
 	font-size:1.5em;
 }
-.h2 {
+.h3 {
 	font-size:1.3em;
 }
-.h3 {
-	font-size:1.2em;
-}
 .h4 {
-	font-size:1.1em;
+	font-size:1.2em;
 }
 .centered {
     text-align: center;
@@ -152,11 +176,18 @@ A {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 }
+.has-footer,
+.flex-column {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
 .flex-center {
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
 	justify-content: center;
 }
+.has-footer,
+.flex-column,
 .flex-center,
 .flex,
 INPUT.modal:checked ~ .modal,
@@ -369,8 +400,16 @@ input[type="radio"] {
 	background-color:#efe;
 }
 
+.footer {background-color:rgba(0,0,0,0.1);padding:50px 0}
+.has-footer {min-height:100vh}
+.has-footer .content {flex: 1 0 auto}
+
+.article {padding:20px}
+
 /* Hide Navigation bar and show hamburger on mobile */
 @media screen and (max-width: 750px) {
+    .article {padding:15px}
+    .nav-logo {padding:13px 15px}
 	.modal {
 		position: relative;
 		padding-top: 10px;
@@ -387,12 +426,14 @@ input[type="radio"] {
     }
 	.nav {
 		height: 50px;
+		background-color: #fff;
 		position: fixed;
 		z-index: 1000;
 		top: 0;
 		left: 0;
 		right: 0;
 	}
+	.nav LI A {padding:13px 15px}
 	.nav-container > UL > LI {
 		display: block;
 		float: none;
@@ -406,11 +447,11 @@ input[type="radio"] {
 		top: 0;
 		bottom: 0;
 		right: 0;
-		background-color: white;
+		background-color: #eee;
 		transition: transform .4s;
-		transform: translateX(200px);
+		transform: translateX(250px);
 		z-index: 1000;
-		min-width: 200px;
+		width: 250px;
 		overflow: auto;
 	}
 	#nav-collapse:checked ~ .has-shadow .nav-container {
@@ -422,15 +463,15 @@ input[type="radio"] {
 		transform: translateX(0);
 	}
 	#nav-collapse:checked ~ .content {
-		transform: translateX(-100px);
+		transform: translateX(-125px);
 		overflow: hidden;
 	}
 	#nav-collapse:checked ~ .footer {
-		transform: translateX(-100px);
+		transform: translateX(-125px);
 	}
 	#nav-collapse:checked ~ .header .nav-hamburger > SPAN:nth-child(1),
 	#nav-collapse:checked ~ .nav .nav-hamburger > SPAN:nth-child(1) {
-		transform: translate(0,8px) rotate(45deg);
+		transform: rotate(-45deg);
 	}
 	#nav-collapse:checked ~ .header .nav-hamburger > SPAN:nth-child(2),
 	#nav-collapse:checked ~ .nav .nav-hamburger > SPAN:nth-child(2) {
@@ -438,6 +479,6 @@ input[type="radio"] {
 	}
 	#nav-collapse:checked ~ .header .nav-hamburger > SPAN:nth-child(3),
 	#nav-collapse:checked ~ .nav .nav-hamburger > SPAN:nth-child(3) {
-		transform: translate(0,-8px) rotate(-45deg);
+		transform: rotate(45deg);
 	}
 }
