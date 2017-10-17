@@ -1,0 +1,10 @@
+/* This file contains demo specific css */
+
+.nav-logo:hover,
+.nav LI A:hover {
+    background-color:rgba(0,0,0,0.1);
+}
+
+.nav {
+	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
