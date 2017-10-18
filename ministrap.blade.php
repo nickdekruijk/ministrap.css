@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         @yield('html_head')
-        <link rel="stylesheet" href="ministrap.css">
-        <link rel="stylesheet" href="demo.css">
+        <link rel="stylesheet" href="/css/ministrap.min.css">
+        <link rel="stylesheet" href="/css/styles.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body class="has-footer">
@@ -21,9 +21,7 @@
                 </label>
             </div>
             <div class="nav-container mw-1140">
-                <ul>
-                    {!! $nav !!}
-                </ul>
+                {!! $nav !!}
             </div>
         </nav>        
         <div role="main" class="content">
