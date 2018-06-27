@@ -23,7 +23,7 @@
             <div class="nav-container mw-1140">
                 {!! $nav !!}
             </div>
-        </nav>        
+        </nav>
         <div role="main" class="content">
             @yield('content')
         </div>
@@ -35,6 +35,6 @@
                     </p>
                 </div>
             </div>
-        </footer>        
+        </footer>
     </body>
 </html>
